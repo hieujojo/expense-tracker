@@ -4,7 +4,7 @@ export default function ExpenseForm({ onAddExpense }) {
   const [amount, setAmount] = useState("");
   const [category, setCategory] = useState("");
   const [description, setDescription] = useState("");
-  const [date, setDate] = useState(new Date().toISOString().split("T")[0]); // Lấy ngày hiện tại
+  const [date, setDate] = useState(new Date().toISOString().split("T")[0]); 
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -15,14 +15,13 @@ export default function ExpenseForm({ onAddExpense }) {
     setAmount("");
     setCategory("");
     setDescription("");
-    setDate(new Date().toISOString().split("T")[0]); // Reset về ngày hiện tại
+    setDate(new Date().toISOString().split("T")[0]); 
   };
 
   return (
     <form onSubmit={handleSubmit} className="p-6 border rounded-2xl bg-white shadow-lg ring-1 ring-gray-200">
       <h2 className="text-2xl font-bold mb-4 text-center text-blue-600">📌 Nhập Chi Tiêu</h2>
 
-      {/* Input Ngày Chi Tiêu */}
       <input
         type="date"
         value={date}
@@ -30,7 +29,6 @@ export default function ExpenseForm({ onAddExpense }) {
         className="border border-gray-300 text-gray-600 p-3 rounded-lg w-full text-lg focus:ring-2 focus:ring-blue-500 outline-none mb-4"
       />
 
-      {/* Input Số Tiền */}
       <input
         type="number"
         placeholder="💵 Nhập số tiền..."
@@ -39,7 +37,6 @@ export default function ExpenseForm({ onAddExpense }) {
         className="border border-gray-300 text-gray-600 p-3 rounded-lg w-full text-lg focus:ring-2 focus:ring-blue-500 outline-none mb-4"
       />
 
-      {/* Chọn Danh Mục */}
       <select
         value={category}
         onChange={(e) => setCategory(e.target.value)}
@@ -52,7 +49,6 @@ export default function ExpenseForm({ onAddExpense }) {
         <option value="Khác">💰 Khác</option>
       </select>
 
-      {/* Input Mô Tả */}
       <input
         type="text"
         placeholder="📝 Mô tả (không bắt buộc)"
@@ -61,7 +57,6 @@ export default function ExpenseForm({ onAddExpense }) {
         className="border border-gray-300 text-gray-600 p-3 rounded-lg w-full text-lg focus:ring-2 focus:ring-blue-500 outline-none mb-4"
       />
 
-      {/* Nút Thêm Chi Tiêu */}
       <button type="submit" className="bg-blue-500 text-white p-3 rounded-lg w-full hover:bg-blue-600 transition font-semibold text-lg">
         ➕ Thêm Chi Tiêu
       </button>
